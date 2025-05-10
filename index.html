@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Vodka Dacică Supreme - Muzică la cerere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #222;
+      padding: 0;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+      animation: bannerWave 4s ease-in-out infinite;
+    }
+    @keyframes bannerWave {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(0.3deg); }
+    }
+    .central-poster img {
+      width: 70%;
+      max-width: 800px;
+      margin: 2rem auto;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    .vodka-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      background-color: #1e1e1e;
+    }
+    .vodka-card {
+      background: #2a2a2a;
+      border: 2px solid #c62828;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .vodka-card:hover {
+      transform: scale(1.07) rotate(-1deg);
+    }
+    .vodka-card img {
+      height: 200px;
+      object-fit: contain;
+    }
+    .vodka-icon {
+      height: 28px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .price {
+      font-weight: bold;
+      color: #ff5252;
+      margin: 0.5rem 0;
+    }
+    footer {
+      background-color: #000;
+      color: #aaa;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    #musicBtn {
+      background-color: #ff5252;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="zalmoxes_banner.png" alt="Steagul bețivului dac">
+</header>
+
+<button id="musicBtn" onclick="document.getElementById('audio').play(); this.style.display='none';">
+  🔊 Pornește muzica WW2
+</button>
+
+<audio id="audio" loop>
+  <source src="ww2_theme.mp3" type="audio/mpeg">
+  Browserul tău nu suportă redarea audio.
+</audio>
+
+<div class="central-poster">
+  <img src="vodka_poster.png" alt="Poster Vodka Dacică">
+</div>
+
+<section class="vodka-grid">
+  <div class="vodka-card">
+    <img src="vodka_icon.png" alt="Sticla 1">
+    <h3><img src="vodka_icon.png" class="vodka-icon">Zalmoxes Supreme</h3>
+    <p class="price">199 Lei</p>
+    <p>„Vedeți zei după a 3-a doză.”</p>
+  </div>
+  <div class="vodka-card">
+    <img src="vodka_icon.png" alt="Sticla 2">
+    <h3><img src="vodka_icon.png" class="vodka-icon">Dac Liber</h3>
+    <p class="price">89 Lei</p>
+    <p>„Când bei, îți vine să cucerești Roma.”</p>
+  </div>
+  <div class="vodka-card">
+    <img src="vodka_icon.png" alt="Sticla 3">
+    <h3><img src="vodka_icon.png" class="vodka-icon">Lupul Alb Țipă</h3>
+    <p class="price">150 Lei</p>
+    <p>„Urli și tu după 2 pahare.”</p>
+  </div>
+  <div class="vodka-card">
+    <img src="vodka_icon.png" alt="Sticla 4">
+    <h3><img src="vodka_icon.png" class="vodka-icon">Columna Shoturilor</h3>
+    <p class="price">70 Lei</p>
+    <p>„La fiecare coloană, o sticlă.”</p>
+  </div>
+  <div class="vodka-card">
+    <img src="vodka_icon.png" alt="Sticla 5">
+    <h3><img src="vodka_icon.png" class="vodka-icon">Ștefan Vodca Mare</h3>
+    <p class="price">250 Lei</p>
+    <p>„Apără-te de mahmureală cu onoare.”</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 DaciiBețivi.ro | Dacă Decebal bea, și tu poți! | Apasă butonul să răsune cântecu’!
+</footer>
+
+</body>
+</html>
