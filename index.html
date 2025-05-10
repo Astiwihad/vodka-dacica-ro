@@ -91,20 +91,8 @@
 
 </header>
 
-<button id="musicBtn" onclick="document.getElementById('audio').play(); this.style.display='none';">
+<button id="musicBtn" onclick="toggleMusic()">
   🔊 Pornește muzica Romania Suvernatista!
-</button>
-
-<audio id="audio" loop>
-  <source src="ww2_theme.mp3" type="audio/mpeg">
-  Browserul tău nu suportă redarea audio.
-</audio>
-<button id="playBtn" onclick="playMusic()">
-  🔊 Pornește muzica Romania Suvernatista!
-</button>
-
-<button id="stopBtn" onclick="stopMusic()" style="display: none;">
-  🔇 Oprește muzica Romania Suvernatista!
 </button>
 
 <audio id="audio" loop>
@@ -113,21 +101,21 @@
 </audio>
 
 <script>
-  function playMusic() {
+  function toggleMusic() {
     const audio = document.getElementById('audio');
-    audio.play();
-    document.getElementById('playBtn').style.display = 'none';
-    document.getElementById('stopBtn').style.display = 'inline-block';
-  }
+    const btn = document.getElementById('musicBtn');
 
-  function stopMusic() {
-    const audio = document.getElementById('audio');
-    audio.pause();
-    audio.currentTime = 0; // optional: rewind to start
-    document.getElementById('stopBtn').style.display = 'none';
-    document.getElementById('playBtn').style.display = 'inline-block';
+    if (audio.paused) {
+      audio.play();
+      btn.innerText = '🔇 Oprește muzica Romania Suvernatista!';
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      btn.innerText = '🔊 Pornește muzica Romania Suvernatista!';
+    }
   }
 </script>
+
 
 <div style="text-align: center; font-size: 0;">
   <div style="display: inline-block; width: 30%; margin: 0 1.5%; vertical-align: top;">
