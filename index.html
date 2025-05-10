@@ -99,6 +99,35 @@
   <source src="ww2_theme.mp3" type="audio/mpeg">
   Browserul tău nu suportă redarea audio.
 </audio>
+<button id="playBtn" onclick="playMusic()">
+  🔊 Pornește muzica Romania Suvernatista!
+</button>
+
+<button id="stopBtn" onclick="stopMusic()" style="display: none;">
+  🔇 Oprește muzica Romania Suvernatista!
+</button>
+
+<audio id="audio" loop>
+  <source src="ww2_theme.mp3" type="audio/mpeg">
+  Browserul tău nu suportă redarea audio.
+</audio>
+
+<script>
+  function playMusic() {
+    const audio = document.getElementById('audio');
+    audio.play();
+    document.getElementById('playBtn').style.display = 'none';
+    document.getElementById('stopBtn').style.display = 'inline-block';
+  }
+
+  function stopMusic() {
+    const audio = document.getElementById('audio');
+    audio.pause();
+    audio.currentTime = 0; // optional: rewind to start
+    document.getElementById('stopBtn').style.display = 'none';
+    document.getElementById('playBtn').style.display = 'inline-block';
+  }
+</script>
 
 <div style="text-align: center; font-size: 0;">
   <div style="display: inline-block; width: 30%; margin: 0 1.5%; vertical-align: top;">
