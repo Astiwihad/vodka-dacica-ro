@@ -91,30 +91,57 @@
 
 </header>
 
-<button id="musicBtn" onclick="toggleMusic()">
+<!-- Buton Romania Suvernatista -->
+<button id="suvernatistaBtn" onclick="toggleMusic('suvernatista')">
   🔊 Pornește muzica Romania Suvernatista!
 </button>
 
-<audio id="audio" loop>
+<audio id="audioSuvernatista" loop>
   <source src="ww2_theme.mp3" type="audio/mpeg">
   Browserul tău nu suportă redarea audio.
 </audio>
 
-<script>
-  function toggleMusic() {
-    const audio = document.getElementById('audio');
-    const btn = document.getElementById('musicBtn');
+<!-- Buton Romania Manelista -->
+<button id="manelistaBtn" onclick="toggleMusic('manelista')">
+  🔊 Pornește muzica Romania Manelista!
+</button>
 
-    if (audio.paused) {
-      audio.play();
-      btn.innerText = '🔇 Oprește muzica Romania Suvernatista!';
-    } else {
-      audio.pause();
-      audio.currentTime = 0;
-      btn.innerText = '🔊 Pornește muzica Romania Suvernatista!';
+<audio id="audioManelista" loop>
+  <source src="dumla.mp3" type="audio/mpeg">
+  Browserul tău nu suportă redarea audio.
+</audio>
+
+<script>
+  function toggleMusic(type) {
+    const audioSuvernatista = document.getElementById('audioSuvernatista');
+    const audioManelista = document.getElementById('audioManelista');
+    const btnSuvernatista = document.getElementById('suvernatistaBtn');
+    const btnManelista = document.getElementById('manelistaBtn');
+
+    if (type === 'suvernatista') {
+      if (audioSuvernatista.paused) {
+        audioSuvernatista.play();
+        btnSuvernatista.innerText = '🔇 Oprește muzica Romania Suvernatista!';
+      } else {
+        audioSuvernatista.pause();
+        audioSuvernatista.currentTime = 0;
+        btnSuvernatista.innerText = '🔊 Pornește muzica Romania Suvernatista!';
+      }
+    }
+
+    if (type === 'manelista') {
+      if (audioManelista.paused) {
+        audioManelista.play();
+        btnManelista.innerText = '🔇 Oprește muzica Romania Manelista!';
+      } else {
+        audioManelista.pause();
+        audioManelista.currentTime = 0;
+        btnManelista.innerText = '🔊 Pornește muzica Romania Manelista!';
+      }
     }
   }
 </script>
+
 
 
 <div style="text-align: center; font-size: 0;">
